@@ -1,0 +1,40 @@
+# [ if - else ]
+# Exercise - Shipping costs and gift assignment
+
+while True:
+
+    # Input
+    
+    try:
+        purchase_price = float(input("Please enter the purchase price (99.99 € - 399.99 €): "))
+    except:
+        print("\nPlease enter a valid number...")
+        continue  # Jumps to the beginning
+    
+    # Data listing
+    
+    no_shipping_costs = 0
+    shipping_costs = 7.99  # Automatically float
+    
+    cost_small = 150.00
+    cost_large = 300.00
+
+    # Shipping cost regulation
+    
+    if purchase_price < cost_small:
+        print(f"\nNo shipping costs because the price is below {cost_small}.")
+        
+    elif cost_small <= purchase_price <= cost_large:
+        print(f"\nShipping costs apply because the price is between {cost_small} and {cost_large}.")
+
+    else:
+        print(f"\nShipping costs apply and a gift is included because the price is above {cost_large}.")
+
+    # Exit the program with input "exit"
+    
+    user_input = input("\nClose program? (y/n): ")
+    if user_input.lower() == "y":
+        exit()  
+        break
+    
+    print("\nReturning to start...")
